@@ -25,20 +25,20 @@ public class Professor {
 	@Column(name = "pro_nome", nullable = false)
 	private String nome;
 
-	@Column(name = "prodt_nascimento", nullable = false)
+	@Column(name = "pro_nascimento", nullable = false)
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Temporal(TemporalType.DATE)
 	private Date nascimento;
 
-	@Column(name = "prodt_registro", nullable = false, updatable = false)
+	@Column(name = "pro_dt_cadastro", nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@CreatedDate
-	private Date dt_registro;
+	private Date dataCadastro;
 
-	@Column(name = "prodt_modificacao", nullable = false)
+	@Column(name = "pro_dt_modificacao", nullable = false)
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date dt_modificacao;
+	private Date dataModificacao;
 
 	public Long getId() {
 		return id;
@@ -64,19 +64,20 @@ public class Professor {
 		this.nascimento = nascimento;
 	}
 
-	public Date getDt_registro() {
-		return dt_registro;
+	public Date getDataCadastro() {
+		return dataCadastro;
 	}
 
-	public void setDt_registro(Date dt_registro) {
-		this.dt_registro = dt_registro;
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
 	}
 
-	public Date getDt_modificacao() {
-		return dt_modificacao;
+	public Date getDataModificacao() {
+		return dataModificacao;
 	}
 
-	public void setDt_modificacao(Date dt_modificacao) {
-		this.dt_modificacao = dt_modificacao;
+	public void setDataModificacao(Date dataModificacao) {
+		this.dataModificacao = dataModificacao;
 	}
+	
 }
